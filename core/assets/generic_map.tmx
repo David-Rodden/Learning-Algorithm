@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="100" height="20" tilewidth="21" tileheight="21" backgroundcolor="#a7f4ff" nextobjectid="9">
+ <tileset firstgid="1" name="spritesheet" tilewidth="21" tileheight="21" spacing="2" margin="2" tilecount="900">
+  <image source="oie_transparent.png" trans="5e81a2" width="692" height="692"/>
+ </tileset>
+ <layer name="background" width="100" height="20">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3TsQmAMBQEUM0sTuIUbmKpLmGnzuNWppGAIFbiR96Dq/KLwHFVBQAAEFufvv4BpyF3MeZMOglhyT2sOZs+QrCPWOwjFvt4V1c/3+yXmzndvxFHk0r4XptKAPivA7ef3yJAHwAA
+  </data>
+ </layer>
+ <layer name="collision" width="100" height="20">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3RywmAMBAFwNTtB+sIaAU2aeJBJCh6EII6A4+FBJYHGwIAAAAAvNNcuwCbIWWsXYJVvsVUu8RPtSldMfMt4sH71eyL3c3un3viwznbDcC3LEHgWgdAHwAA
+  </data>
+ </layer>
+ <objectgroup name="Object Layer 1"/>
+</map>

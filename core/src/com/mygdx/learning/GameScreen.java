@@ -8,7 +8,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
-import com.badlogic.gdx.utils.viewport.FitViewport;
+import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 
 /**
@@ -28,7 +28,7 @@ public class GameScreen implements Screen {
         testTexture = new Texture("Test_Image.png");
         camera = new OrthographicCamera();
         camera.setToOrtho(false);
-        port = new FitViewport(0, 0);   //will need to fit correct game dimensions
+        port = new ScreenViewport(camera);   //will need to fit correct game dimensions
         mapLoader = new TmxMapLoader();
         map = mapLoader.load("generic_map.tmx");   //will need tmx file once configured
         renderer = new OrthogonalTiledMapRenderer(map);
@@ -43,14 +43,15 @@ public class GameScreen implements Screen {
     public void render(float delta) {
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-        camera.update();
-        renderer.setView(camera);
-        renderer.render();
+        platformer.batch.setProjectionMatrix(camera.combined);
+        platformer.batch.begin();
+        platformer.batch.draw(testTexture, 0, 0);
+        platformer.batch.end();
     }
 
     @Override
     public void resize(int width, int height) {
-
+        port.update(width, height);
     }
 
     @Override
